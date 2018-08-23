@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hyk.app.ipclearndemo">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:name=".MyApplication"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity"
+            android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--进程名以 ： 开头的进程属于当前应用私有进程
+            不以 ： 开头进程属于全局进程-->
+
+        <activity android:name=".SecondActivity"
+            android:configChanges="screenLayout"
+            android:process=":remote"
+            />
+
+        <activity android:name=".ThirdActivity"
+            android:configChanges="screenLayout"
+            android:process="com.hyk.app.ipclearndemo.remote"
+            />
+
+    </application>
+
+</manifest>
