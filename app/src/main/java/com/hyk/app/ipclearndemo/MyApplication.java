@@ -3,6 +3,7 @@ package com.hyk.app.ipclearndemo;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
+import android.os.Environment;
 import android.util.Log;
 
 public class MyApplication extends Application {
