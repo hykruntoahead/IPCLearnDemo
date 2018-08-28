@@ -8,6 +8,11 @@ Android IPC 机制
     2.线程同步机制完全失效
     3.SP可靠性显著下降
     4.Application 会多次创建
+
+二. Binder 工作机制 p55
+
+三. AIDL
+    asInterface 用于将服务端的Binder对象转换成客户端所需的AIDL接口类型的对象
     
     
    
