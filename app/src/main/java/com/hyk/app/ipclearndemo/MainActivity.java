@@ -20,4 +20,15 @@ public class MainActivity extends AppCompatActivity {
     public void startSecond(View view) {
         startActivity(new Intent(this,SecondActivity.class));
     }
+
+    private void persistToFile(){
+        new Thread(
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                    }
+                })
+        ).start();
+    }
 }
