@@ -26,8 +26,10 @@ Android IPC 机制
     Binder两个重要方法linkToDeath 和 unlinkToDeath
    
 三  Android中的IPC
-   1.Bundle
-   2.使用文件共享 
+  
+  1.Bundle
+  
+  2.使用文件共享 
     
         文件共享方式适合在对数据同步要求不高的进程之间通信，并且要妥善处理并发读写问题
         不建议在进程通信中使用Sharedprefrence
