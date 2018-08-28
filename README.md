@@ -35,3 +35,10 @@ Android IPC 机制
    3.Mesenger
         
         Messenger 是一种轻量级的IPC方案，它的底层实现时AIDL
+        
+        服务端进程：
+            1.创建一个Service来处理客户端连接请求，同时创建一个Handler并通过它来创建一个Messenger对象
+            2.在Service中返回这个Messenger对象底层的Binder
+        客户端进程：
+            绑定服务端Service，绑定成功后用服务端返回的IBinder对象创建一个Messenger，通过这个messenger就可以向服务器发送消息了，发送类型为Message对象。
+            如果需要服务器端能够回应客户端，就和服务端一样，我们还需要创建一个Handler并创建一个新的Messenger，并把这个Messenger对象通过Message的replyTo参数传递给服务端，服务端通过这个replyTo参数就可以回应客户端
