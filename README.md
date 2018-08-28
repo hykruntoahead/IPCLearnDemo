@@ -12,7 +12,9 @@ Android IPC 机制
 二. Binder 工作机制 p55
 
 三. AIDL
-    asInterface 用于将服务端的Binder对象转换成客户端所需的AIDL接口类型的对象
+
+    asInterface ---> 用于将服务端的Binder对象转换成客户端所需的AIDL接口类型的对象;这种转换过程是区分进程，如果客户端和服务端位于同一进程，那么此方法返回的就是服务端的“Stub”对象本身，否则返回的是系统封装后的Stub.proxy对象
+    
     
     
    
