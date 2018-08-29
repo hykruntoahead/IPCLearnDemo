@@ -65,4 +65,11 @@ Android IPC 机制
                     IBinder key = listener.asBinder()
                     Callbcak value = new Callback(listener,cookie)
            内部自动实现了线程同步功能+当客户端进程终止后，它能够自动移除客户端注册的listener。
+      
+      Binder意外死亡重连服务方法：
+            第一种：给Binder设置DeathRecipient监听，当Binder死亡时，收到binderDied回调，在该方法中重连
+            第二种：在onServiceDisconnected中重连
+      AIDL权限验证：
+            第一种：在onBind中进行验证
+            第二种：在onTransact方法中进行权限验证（还可采用PID，UID）
                     
