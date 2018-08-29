@@ -72,4 +72,7 @@ Android IPC 机制
       AIDL权限验证：
             第一种：在onBind中进行验证
             第二种：在onTransact方法中进行权限验证（还可采用PID，UID）
+            
+            
+   5.ContentProvider
                     
