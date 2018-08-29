@@ -64,4 +64,5 @@ Android IPC 机制
            其中key和value:
                     IBinder key = listener.asBinder()
                     Callbcak value = new Callback(listener,cookie)
+           内部自动实现了线程同步功能+当客户端进程终止后，它能够自动移除客户端注册的listener。
                     
