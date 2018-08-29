@@ -23,7 +23,7 @@ public class MessengerActivity extends Activity {
 
     private Messenger mService;
 
-    private Messenger mGetReplayMessager = new Messenger(new MessengerHandler());
+    private Messenger mGetReplayMessenger = new Messenger(new MessengerHandler());
 
     private ServiceConnection mConnection = new ServiceConnection() {
         @Override
@@ -34,7 +34,8 @@ public class MessengerActivity extends Activity {
             data.putString("msg", "hello , this is client");
             message.setData(data);
 
-            message.replyTo = mGetReplayMessager;
+            message.replyTo = mGetReplayMessenger;
+
             try {
                 mService.send(message);
             } catch (RemoteException e) {
@@ -63,7 +64,7 @@ public class MessengerActivity extends Activity {
         super.onDestroy();
     }
 
-    private class MessengerHandler extends Handler {
+    private static class MessengerHandler extends Handler {
 
         @Override
         public void handleMessage(Message msg) {

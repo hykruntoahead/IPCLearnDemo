@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:name=".MyApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".messenger.MessengerActivity"
+        <activity android:name=".use_aidl.BookManagerClientActivity"
             android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,6 +36,9 @@
 
         <service android:name=".messenger.MessengerService"
             android:process=":remote"/>
+
+        <service android:name=".use_aidl.BookManagerService"
+            android:process=":remote_s"/>
 
     </application>
 
