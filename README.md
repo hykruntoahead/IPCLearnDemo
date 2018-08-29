@@ -55,3 +55,13 @@ Android IPC 机制
             首先需要绑定服务端的Service，绑定成功后，
             将服务端返回的Binder对象转成AIDL接口所属的类型，
             接着就可以调用aidl中的方法了。
+       注：Binder会把客户端传递过来的对象重新转化并生成一个新对象
+       
+       RemoteCallBackList:
+           remoteCallbackList<E extends IInterface> 是系统专门提供的用于删除进程listener的接口
+           内部有一个Map保存所有AIDl回调--> 
+                    ArrayMap<IBinder,Callback> mCallBacks = new ArrayMap()
+           其中key和value:
+                    IBinder key = listener.asBinder()
+                    Callbcak value = new Callback(listener,cookie)
+                    
