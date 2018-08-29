@@ -44,3 +44,10 @@ Android IPC 机制
         客户端进程：
             绑定服务端Service，绑定成功后用服务端返回的IBinder对象创建一个Messenger，通过这个messenger就可以向服务器发送消息了，发送类型为Message对象。
             如果需要服务器端能够回应客户端，就和服务端一样，我们还需要创建一个Handler并创建一个新的Messenger，并把这个Messenger对象通过Message的replyTo参数传递给服务端，服务端通过这个replyTo参数就可以回应客户端
+            
+   4.AIDL
+   
+        服务端：
+            首先创建一个Service用来监听客户端的连接请求，
+            然后创建一个AIDL文件，将暴露给客户端的接口在这个AIDL文件中声明，
+            最后在Service中实现这个AIDL接口即可
