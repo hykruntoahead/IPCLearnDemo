@@ -6,9 +6,13 @@ import android.os.Parcelable;
 import java.io.Serializable;
 
 public class User implements Parcelable, Serializable {
-    private int age;
-    private String name;
-    private boolean male;
+    public int age;
+    public String name;
+    public boolean male;
+
+
+    public User() {
+    }
 
     public User(int age, String name, boolean male) {
         this.age = age;
