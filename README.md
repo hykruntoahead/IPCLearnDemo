@@ -78,6 +78,14 @@ Android IPC 机制
    
         ContentProvider 的底层实现同样也是Binder
         android:authorities 是ContentProvider的唯一标识
+  
+   6.socket
+   
+   
+         分为流式套接字和用户数据报套接字两种
+         
+         
+ 
        
         
         
